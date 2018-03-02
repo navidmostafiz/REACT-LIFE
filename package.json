@@ -1,0 +1,21 @@
+{
+  "name": "react-life",
+  "version": "1.0.0",
+  "description": "react js life cycle",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "react",
+    "node",
+    "express",
+    "life",
+    "cycle"
+  ],
+  "author": "NAVID MOSTAFIZ",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
