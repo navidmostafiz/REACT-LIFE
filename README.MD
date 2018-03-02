@@ -5,17 +5,19 @@ REACT LIFE CYCLE
 * NodeJs - 
 * Node Express - Restful API
 * Axios - Async(promise based) Restful API request handler (w/ JSON formatter, XSRF)
+
 * ReactJs, ReactDom, React-Route - component based UI library
 * Redux - common state layer across mutiple components(dumb), containers (smart component)
+
 * MongoDB - NOSQL non-schema, non relational DB
 * Mongoose - ORM for Mongo
 * RoboT3 - Mongo visual
+
 * WebPack2 - Build tool, JS & CSS bundler
 * Babel - ES6 transpiler
+
 * JWT (JSON Web Token) - local Auth
 * BCrypt - hashing encryption
-* MomentJs - Date formatter
-* ToastrJs - JQuery based non-blocking notifications
 
 ## :beetle: Steps To Install
 * 1)cmd> mkdir app_name

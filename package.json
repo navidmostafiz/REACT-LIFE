@@ -16,6 +16,7 @@
   "author": "NAVID MOSTAFIZ",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "react-routes": "^0.2.6"
   }
 }
