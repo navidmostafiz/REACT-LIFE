@@ -2,8 +2,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 
 var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-    filename: 'index.html',
-    template: __dirname + '/views/index.html',
+    filename: 'indexx.html',
+    template: path.join(__dirname, '/views/index.html'),
 });
 
 
