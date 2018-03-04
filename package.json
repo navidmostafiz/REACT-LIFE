@@ -4,10 +4,10 @@
   "description": "react js life cycle",
   "main": "index.js",
   "scripts": {
-    "start": "npm run clean && npm run build && npm run startserver",
     "clean": "sudo rm -rf build && mkdir build",
     "build": "npm run clean && webpack -p",
     "dev": "webpack -d --watch",
+    "start": "npm run build && npm run startserver",
     "startserver": "node server.js"
   },
   "keywords": [
