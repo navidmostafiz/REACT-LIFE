@@ -1,19 +1,27 @@
-//var HTMLWebpackPlugin = require('html-webpack-plugin');
-//var HTMLWebpackPluginConfig = new HTMLWebpackPlugin();
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path');
 
+var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
+    filename: 'index.html',
+    template: __dirname + '/views/index.html',
+});
 
 
 module.exports = {
-    entry: __dirname + '/app.js',
+    entry: './modules/index.js',
     module: {
-        loaders: [{
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader'
-        }]
+        rules: [
+            {
+                test: /\.js$/,
+                use: 'babel-loader'
+            }
+        ]
     },
-    output:{
+    output: {
         filename: 'bundled.js',
-        path: __dirname+'/build'
+        path: __dirname + '/build/',
     },
+    plugins: [HtmlWebpackPluginConfig]
 };
+
+console.log(path.resolve(__dirname + '/build/bundled.js'));

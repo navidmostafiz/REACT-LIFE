@@ -4,7 +4,9 @@
   "description": "react js life cycle",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "webpack -d --watch",
+    "prod": "webpack -p"
   },
   "keywords": [
     "react",
@@ -27,6 +29,7 @@
     "babel-preset-react": "^6.24.1",
     "html-webpack-plugin": "^3.0.4",
     "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.10",
     "webpack-dev-server": "^3.1.0"
   }
 }
