@@ -22,7 +22,7 @@ class App extends React.Component {
         return (
             <div>
                 <Header />
-                <Home />
+                <Home username="navidmostafiz" />
                 <Footer />
             </div>
         );

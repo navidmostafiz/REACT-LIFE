@@ -4,28 +4,48 @@ import { render } from "react-dom";
 export class Home extends React.Component {
 
     constructor(props) {
+        console.log('home component constructor', props);
         super(props);
-        this.states = { count: 0 };
-        console.log('home component started!');
+        this.state = { count: 0 };
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentWillMount() {
+        console.log('componentWillMount');
+    };
+
+    componentWillReceiveProps(nextProps) {
+        //call setState: yes        
+        console.log('componentWillReceiveProps: nextProps: ', nextProps);
+    };
+
+    shouldComponentUpdate(nextProps, nextState) {
+        //method type: boolean
+        //call setState: no
+        console.log('shouldComponentUpdate:true: nextProps: nextState', nextProps, nextState);
+        return true;
+    };
+
+    componentWillUpdate() {
+        //call setState: no
+        console.log('componentWillUpdate');
+    };
 
     //event handler
     handleSubmit() {
-        var newVal = this.states.count + 1;
-        this.setState({ count: newVal });
-        console.log('this.states.count: ' + this.states.count + newVal);
+        this.setState({ count: (this.state.count + 1) });
+        console.log('this.state.count: ' + this.state.count);
     }
 
     render() {
+        console.log('render()');
         return (
 
             <div className="row">
 
                 <div className="col-md-4">
-                    <h2>Heading</h2>
+                    <h2>Welcome, {this.props.username}</h2>
                     <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
                     <p><a className="btn btn-default" href="#" role="button">View details &raquo;</a></p>
                 </div>
@@ -35,7 +55,7 @@ export class Home extends React.Component {
 
 
                     <div className="form-group">
-                        <h3>{this.states.count}</h3>
+                        <h3>{this.state.count}</h3>
                     </div>
 
                     <button type="button" className="btn btn-default" onClick={this.handleSubmit} >Save</button>
@@ -51,4 +71,19 @@ export class Home extends React.Component {
             </div>
         );
     }
+
+    componentDidMount() {
+        //call setState: yes
+        console.log('componentDidMount');
+    };
+
+    componentDidUpdate() {
+        //call setState: yes
+        console.log('componentDidUpdate');
+    };
+
+    componentWillUnmount() {
+        //call setState: no
+        console.log('componentWillUnmount');
+    };
 }
