@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 //core components
 import HeaderComponent from "./Header";
 import FooterComponent from "./Footer";
+console.log('MasterLayout component loaded');
 
 //the masterLayout load static header, footer and dynamic chil components passedinto it as props.
 class MasterLayout extends Component {

@@ -1,5 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
+console.log('NewUser loaded');
 
 export default class NewUser extends React.Component {
     render() {

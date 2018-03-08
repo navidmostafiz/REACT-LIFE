@@ -1,5 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
+console.log('dashboard component loaded');
 
 export default class DashBoard extends React.Component {
     render() {

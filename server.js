@@ -3,7 +3,7 @@ const app = require('./app');
 const port = process.env.PORT || 3000;
 const server = http.createServer(app);
 const path = require('path');
-
+console.log('server started with webpack');
 //const express = require('express');
 //const open = require('open');
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
+console.log('userList component loaded');
 
 export default class UserList extends React.Component {
     render() {

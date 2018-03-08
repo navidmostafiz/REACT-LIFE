@@ -1,5 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
+console.log('Header component loaded');
 
 export default class Header extends React.Component {
     render() {

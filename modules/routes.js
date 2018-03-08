@@ -5,6 +5,7 @@ import FooterComponent from "./core/components/Footer";
 import UserComponent from "./user/components/userList";
 import DashboardComponent from "./dashboard/components/dashboard";
 import NotFound from "./core/components/NotFound";
+console.log('master root routes loaded');
 
 const PrimaryLayout = () => (
   <div className="primary-layout">
@@ -35,7 +36,6 @@ export default () => (
     <PrimaryLayout />
   </BrowserRouter>
 )
-console.log('master root routes loaded');
 
 
 // //core components

@@ -1,5 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
+console.log('DetailUser loaded');
 
 export default class DetailUser extends React.Component {
     render() {

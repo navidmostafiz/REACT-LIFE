@@ -1,5 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
+console.log('NotFound component loaded');
 
 export default class NotFound extends React.Component {
     render() {
