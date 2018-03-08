@@ -37,5 +37,24 @@ REACT LIFE CYCLE
 * To build the project: cmd> npm run build
 * To start the server and run attached project app: cmd> npm run start
 
+## :beetle: THE APP EXEC FLOW:
+### ON CLIENT SIDE
+* Header component loaded
+* Footer component loaded
+* userList loaded
+* dashboard component loaded
+* NotFound component loaded
+* master root routes loaded
+* master laytout loaded by route
+* MasterLayout component loaded
+* react app executed
+### ON NODE SERVER
+* express api controller loaded
+* express api root router loaded
+* react + express api root route added to server
+* server started with webpack
+* webpack.config loaded
+* sever started on port:  3000
+
 ## :beetle: Authors
 **Navid Mostafiz**
