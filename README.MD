@@ -19,6 +19,9 @@ REACT LIFE CYCLE
 * JWT (JSON Web Token) - local Auth
 * BCrypt - hashing encryption
 
+* style-loader - Webpack loader that can load some CSS and inject it into the document via a <link> tag.
+* css-loader - is the loader that can parse a CSS file and apply various transforms to it. Crucially it has a CSS Modules mode that can take our CSS and hash the classes as mentioned above
+
 ## :beetle: Steps To Install
 * 1) cmd> mkdir app_name
 * 2) cmd> npm init

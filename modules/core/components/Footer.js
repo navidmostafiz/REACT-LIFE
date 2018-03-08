@@ -4,8 +4,12 @@ import { render } from "react-dom";
 export default class Footer extends React.Component {
     render() {
         return (
-            <footer>
-                <p>&copy; 2016 Company, Inc.</p>
+            <footer classname="sticky-footer">
+                <div classname="container">
+                    <div classname="text-center">
+                        <small>Copyright © Your Website 2018</small>
+                    </div>
+                </div>
             </footer>
         );
     }
