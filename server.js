@@ -4,7 +4,7 @@ const port = process.env.PORT || 3000;
 const server = http.createServer(app);
 const path = require('path');
 
-const express = require('express');
+//const express = require('express');
 //const open = require('open');
 
 const webpack = require('webpack');
@@ -18,7 +18,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
 //app.use(require('webpack-hot-middleware')(compiler));
 
 app.get('*', function (request, response) {
-    response.sendFile(path.join(__dirname, 'build/indexx.html'));
+    response.sendFile(path.join(__dirname, 'build/index.html'));
 });
 
 server.listen(port);

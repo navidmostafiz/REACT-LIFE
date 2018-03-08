@@ -6,8 +6,8 @@ const app = express();
 let apiRouting = require('./routes.js');
 
 // view engine setup
-app.set('views', path.join(__dirname, '../views'));
-app.set('view engine', 'pug');
+// app.set('views', path.join(__dirname, '../views'));
+// app.set('view engine', 'pug');
 
 //json persing middleware
 app.use(bodyParser.json());
