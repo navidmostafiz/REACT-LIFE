@@ -1,4 +1,8 @@
 import axios from 'axios';
+const API_URL = "http://127.0.0.1:5000/api/";
+axios.defaults.baseURL = API_URL;
+
+console.log('users.actions.getuserList');
 
 export function getUserlist(callback) {
   return function (dispatch) {
@@ -8,18 +12,40 @@ export function getUserlist(callback) {
     axios.get('users')
       .then((response) => {
 
-        dispatch({ type: 'FETCH_ALL_USER_SUCCESS', payload: response.data, }); //dispatch
+        console.log('axios called>then(): ', response.data);
+        var testData = {
+          data: [
+            {
+              "id": 1,
+              "userName": "navidmostafiz",
+              "firstName": "Navid",
+              "lastname": "Mostafiz"
+            },
+            {
+              "id": 2,
+              "userName": "mohaiminul",
+              "firstName": "Mohaiminul",
+              "lastname": "Islam"
+            }
+          ]
+        };
+
+        //dispatch({ type: 'FETCH_ALL_USER_SUCCESS', payload: response.data, }); //dispatch
+        dispatch({ type: 'FETCH_ALL_USER_SUCCESS', payload: testData, }); //dispatch
 
         if (typeof callback === 'function') {
-          callback(null, response.data);
+          //callback(null, response.data);
+          callback(null, testData);
         }
       })
-      .catch((err) => {
+      .catch((error) => {
 
-        dispatch({ type: 'FETCH_ALL_USER_FAILURE', payload: err.response.data, }); //dispatch
+        console.log('exios called: failed', error);
+
+        dispatch({ type: 'FETCH_ALL_USER_FAILURE', payload: error.response.data, }); //dispatch
 
         if (typeof callback === 'function') {
-          callback(err.response.data);
+          callback(error.response.data);
         }
       }); //end of exios
   };

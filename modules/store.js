@@ -1,9 +1,7 @@
 //import axios from 'axios';
-//import logger from 'redux-logger';
-//import thunk from 'redux-thunk';
-//import { createStore, applyMiddleware } from 'redux';
-import { createStore } from 'redux';
-
+import logger from 'redux-logger';
+import thunk from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux';
 import reducers from './reducers';
 
 // const accessToken = (store) => (next) => (action) => {
@@ -15,6 +13,7 @@ import reducers from './reducers';
 const store = createStore(
     reducers,
     //applyMiddleware(thunk, accessToken, logger())
+    applyMiddleware(thunk, logger())
 );
 
 export default store;

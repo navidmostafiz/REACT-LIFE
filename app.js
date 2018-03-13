@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
+import cors from 'cors';
 
 let apiRouting = require('./routes.js');
 
@@ -11,7 +12,7 @@ let apiRouting = require('./routes.js');
 
 //json persing middleware
 app.use(bodyParser.json());
-
+app.use(cors());
 
 /*instead of writing restful web api get,put,post methods here, 
 we just listen to 1 get method with path /api i.e localhost:3000/api */

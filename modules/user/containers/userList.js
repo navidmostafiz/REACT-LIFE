@@ -13,14 +13,14 @@ var users = [
 
 class UserListContainer extends Component {
     componentWillMount() {
-        //this.props.getUserlist();
+        this.props.getUserlist();
         console.log('UserListComponent.componentWillMount');
     }
 
     render() {
         console.log('UserListComponent.render()');
         return (
-            <UserListComponent userList={users} />
+            <UserListComponent userList={this.props.userList} />
         );
     }
 }
@@ -45,6 +45,6 @@ function matchDispatchToProps(dispatch) {
 // We don't want to return the plain UserListComponent (component) anymore,
 // we want to return the smart Container
 //  > UserListComponent is now aware of state and actions
-//export default connect(mapStateToProps, matchDispatchToProps)(UserListContainer);
+export default connect(mapStateToProps, matchDispatchToProps)(UserListContainer);
 
-export default UserListContainer;
+//export default UserListContainer;
