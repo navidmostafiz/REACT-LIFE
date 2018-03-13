@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route } from "react-router-dom";
 import HeaderComponent from "./core/components/Header";
 import FooterComponent from "./core/components/Footer";
-import UserComponent from "./user/components/userList";
+//import UserComponent from "./user/components/userList";
+import UserListContainer from "./user/containers/userList";
 import DashboardComponent from "./dashboard/components/dashboard";
 import NotFound from "./core/components/NotFound";
-console.log('master root routes loaded');
+console.log('master root routes v4 loaded');
 
+//using react-router v4
 const PrimaryLayout = () => (
   <div className="primary-layout">
     <header>
@@ -22,7 +24,7 @@ const PrimaryLayout = () => (
         </ol>
         <main>
           <Route path="/" exact component={DashboardComponent} />
-          <Route path="/users" component={UserComponent} />
+          <Route path="/users" component={UserListContainer} />
           <Route path="/not" component={NotFound} />
         </main>
         <FooterComponent />
