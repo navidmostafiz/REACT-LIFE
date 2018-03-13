@@ -19,6 +19,13 @@ app.use(require('webpack-dev-middleware')(compiler, {
     publicPath: config.output.publicPath
 }));
 
+//Add this middleware to Express to return .js.gz so you can still load bundle.js from the html but will receive bundle.js.gz
+app.get('*.js', function (req, res, next) {
+    req.url = req.url + '.gz';
+    res.set('Content-Encoding', 'gzip');
+    next();
+});
+
 app.get('*', function (request, response) {
     response.sendFile(path.join(__dirname, 'build/index.html'));
 });

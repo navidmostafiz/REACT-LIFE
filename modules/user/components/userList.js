@@ -7,7 +7,7 @@ export default class UserList extends React.Component {
         console.log('UserList.constructor');
     }
 
-    componentWillRecieveProps(nextProps) {
+    componentWillReceiveProps(nextProps) {
         console.log('UserList.componentWillRecieveProps', nextProps);
     }
 
