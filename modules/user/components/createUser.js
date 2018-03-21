@@ -1,8 +1,30 @@
 import React from "react";
 import { render } from "react-dom";
-console.log('NewUser loaded');
+console.log('CreateUser loaded');
 
-export default class NewUser extends React.Component {
+export default class CreateUser extends React.Component {
+    constructor(props) {
+        super(props);
+        console.log('CreateUser.constructor');
+    }
+
+    componentWillReceiveProps(nextProps) {
+        console.log('CreateUser.componentWillRecieveProps', nextProps);
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log('CreateUser.shouldComponentUpdate', nextProps, nextState);
+        return true;
+    }
+
+    componentWillUpdate(nextProps, nextState) {
+        console.log('CreateUser.componentWillUpdate', nextProps, nextState);
+    }
+
+    componentWillMount() {
+        console.log('CreateUser.componentWillMount');
+    }
+
     render() {
         return (
             <div className="container">
@@ -18,7 +40,7 @@ export default class NewUser extends React.Component {
                                 <div className="form-group">
                                     <label className="col-md-4 control-label" htmlFor="username">User Name</label>
                                     <div className="col-md-4">
-                                        <input id="username" name="username" type="text" placeholder="placeholder" className="form-control input-md" required />
+                                        <input id="username" name="username" type="text" placeholder="user name" className="form-control input-md" required />
                                         <span className="help-block">help</span>
                                     </div>
                                 </div>
@@ -62,7 +84,7 @@ export default class NewUser extends React.Component {
                                             <span className="input-group-addon">
                                                 <input type="checkbox" />
                                             </span>
-                                            <input id="disable" name="disable" className="form-control" type="text" placeholder="placeholder" required />
+                                            <input id="disable" name="disable" className="form-control" type="text" required />
                                         </div>
                                         <p className="help-block">help</p>
                                     </div>
@@ -82,5 +104,22 @@ export default class NewUser extends React.Component {
                 </div>
             </div>
         );
+    }
+
+
+    componentDidCatch() {
+        console.log('UserList.componentDidCatch');
+    }
+
+    componentDidMount() {
+        console.log('UserList.componentDidMount');
+    }
+
+    componentDidUpdate() {
+        console.log('UserList.componentDidUpdate');
+    }
+
+    componentWillUnmount() {
+        console.log('UserList.componentWillUnmount');
     }
 }

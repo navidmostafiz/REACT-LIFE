@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
-console.log('Footer component loaded');
+console.log('COMPONENT: Footer');
 
 export default class Footer extends React.Component {
     render() {

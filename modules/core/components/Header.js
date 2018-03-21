@@ -1,6 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
-console.log('Header component loaded');
+import { Link } from 'react-router'
+console.log('COMPONENT: Header');
 
 export default class Header extends React.Component {
     render() {
@@ -13,15 +14,15 @@ export default class Header extends React.Component {
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav navbar-sidenav" id="exampleAccordion">
                         <li className="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                            <a className="nav-link" href="/">
+                            <Link to="/" className="nav-link">
                                 <span className="nav-link-text">Dashboard</span>
-                            </a>
+                            </Link>
                         </li>
-                        <li className="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-                            <a className="nav-link" href="/users">
+                        <li className="nav-item" data-toggle="tooltip" data-placement="right" title="UserPanel">
+                            <Link to="/users" className="nav-link">
                                 <i className="fa fa-fw fa-area-chart" />
                                 <span className="nav-link-text">User Panel</span>
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                     <ul className="navbar-nav ml-auto">

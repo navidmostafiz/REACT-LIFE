@@ -3,7 +3,9 @@ var HtmlWebpackPlugin = require('html-webpack-plugin'); //moves html to build fo
 //var HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 //var CleanWebpackPlugin = require('clean-webpack-plugin'); //cleans build folder
 // var ExtractTextPlugin = require("extract-text-webpack-plugin"); //ectracts css or others from bundle and creates separate file in build folder
-var CompressionPlugin = require('compression-webpack-plugin');
+'style-loader' // css parse
+'css-loader' // css parse
+// var CompressionPlugin = require('compression-webpack-plugin');
 var path = require('path');
 console.log('webpack.config loaded');
 
@@ -22,13 +24,13 @@ var pluginConfigs = [
     //     disable: false,
     //     allChunks: true
     // }),
-    new CompressionPlugin({
-        asset: '[path].gz[query]',
-        algorithm: 'gzip',
-        test: /\.js$|\.css$|\.html$/,
-        threshold: 10240,
-        minRatio: 0.8,
-    }),
+    // new CompressionPlugin({
+    //     asset: '[path].gz[query]',
+    //     algorithm: 'gzip',
+    //     test: /\.js$|\.css$|\.html$/,
+    //     threshold: 10240,
+    //     minRatio: 0.8,
+    // }),
     //new webpack.optimize.CommonsChunkPlugin(options),
 ];
 

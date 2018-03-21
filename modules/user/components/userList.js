@@ -1,27 +1,27 @@
 import React from "react";
-console.log('userList component loaded');
+console.log('COMPONENT: UserList');
 
 export default class UserList extends React.Component {
     constructor(props) {
         super(props);
-        console.log('UserList.constructor');
+        // console.log('UserList.constructor');
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log('UserList.componentWillRecieveProps', nextProps);
+        // console.log('UserList.componentWillRecieveProps', nextProps);
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        console.log('UserList.shouldComponentUpdate', nextProps, nextState);
+        // console.log('UserList.shouldComponentUpdate', nextProps, nextState);
         return true;
     }
 
     componentWillUpdate(nextProps, nextState) {
-        console.log('UserList.componentWillUpdate', nextProps, nextState);
+        // console.log('UserList.componentWillUpdate', nextProps, nextState);
     }
 
     componentWillMount() {
-        console.log('UserList.componentWillMount');
+        // console.log('UserList.componentWillMount');
     }
 
     render() {
@@ -53,11 +53,11 @@ export default class UserList extends React.Component {
                                     <tbody>
 
                                         {this.props.userList.map((user, index) => (
-                                            <tr role="row">
-                                                <td className="sorting_1">{user.userName}</td>
+                                            <tr role="row" key={user.id}>
+                                                <td>{user.userName}</td>
                                                 <td>{user.firstName}</td>
                                                 <td>{user.lastName}</td>
-                                                <td><a href={"/" + user.id} > Update </a> </td>
+                                                <td><a href={"./users/" + user.id} > Update </a> </td>
                                             </tr>
                                         ))}
 
@@ -75,18 +75,18 @@ export default class UserList extends React.Component {
 
 
     componentDidCatch() {
-        console.log('UserList.componentDidCatch');
+        // console.log('UserList.componentDidCatch');
     }
 
     componentDidMount() {
-        console.log('UserList.componentDidMount');
+        // console.log('UserList.componentDidMount');
     }
 
     componentDidUpdate() {
-        console.log('UserList.componentDidUpdate');
+        // console.log('UserList.componentDidUpdate');
     }
 
     componentWillUnmount() {
-        console.log('UserList.componentWillUnmount');
+        // console.log('UserList.componentWillUnmount');
     }
 }

@@ -1,50 +1,37 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
-//components and actions
+//components
 import UserListComponent from '../components/userList';
+//actions
 import { getUserlist } from '../actions/getUserList';
-console.log('user list container loaded');
 
-var users = [
-    { id: 1, userName: 'navidmostafiz', firstName: 'Navid', lastName: 'Mostafiz' },
-    { id: 2, userName: 'mohaiminul', firstName: 'Mohaiminul', lastName: 'Islam' }
-];
+console.log('CONTAINER: UserListContainer');
 
 class UserListContainer extends Component {
     componentWillMount() {
-        this.props.getUserlist();
-        console.log('UserListComponent.componentWillMount');
+        this.props.getUserlist();        
+        // console.log('UserListContainer.componentWillMount');
     }
 
     render() {
-        console.log('UserListComponent.render()');
+        // console.log('UserListContainer.render()');
         return (
             <UserListComponent userList={this.props.userList} />
         );
     }
 }
 
-// Get apps store and pass it as props to UserListComponent
-//  > whenever store changes, the UserListComponent will automatically re-render
-// "store.userList" is set in reducers.js
 function mapStateToProps(store) {
     return {
         userList: store.userList,
     };
 }
 
-// Get actions and pass them as props to to UserListComponent
-//  > now UserListComponent has this.props.getUserlist
 function matchDispatchToProps(dispatch) {
     return bindActionCreators({
-        getUserlist: getUserlist,
+        getUserlist: getUserlist,        
     }, dispatch);
 }
 
-// We don't want to return the plain UserListComponent (component) anymore,
-// we want to return the smart Container
-//  > UserListComponent is now aware of state and actions
 export default connect(mapStateToProps, matchDispatchToProps)(UserListContainer);
-
-//export default UserListContainer;

@@ -2,8 +2,8 @@
 console.log('express api controller loaded');
 
 var users = [
-    { id: 1, userName: 'navidmostafiz', firstName: 'Navid', lastname: 'Mostafiz' },
-    { id: 2, userName: 'mohaiminul', firstName: 'Mohaiminul', lastname: 'Islam' }
+    { id: 1, userName: 'navidmostafiz', firstName: 'Navid', lastName: 'Mostafiz' },
+    { id: 2, userName: 'mohaiminul', firstName: 'Mohaiminul', lastName: 'Islam' }
 ];
 
 //get user
@@ -38,7 +38,7 @@ module.exports.updateUser = function (request, response, next) {
     console.log('server.user.controller.updateUser');
     var userId = request.params._id; //not using it, grabbing is form body
     var userToUpdate = request.body;
-    
+
     //create new user list with replacing the element that has matching id
     var tempUsers = [];
     users.forEach(function (user) {

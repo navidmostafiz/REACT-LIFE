@@ -1,68 +1,26 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from "react-router-dom";
-import HeaderComponent from "./core/components/Header";
-import FooterComponent from "./core/components/Footer";
-//import UserComponent from "./user/components/userList";
-import UserListContainer from "./user/containers/userList";
-import DashboardComponent from "./dashboard/components/dashboard";
-import NotFound from "./core/components/NotFound";
-console.log('master root routes v4 loaded');
+import { Router, Route, IndexRoute, IndexRedirect, browserHistory } from 'react-router';
+//core components
+import MasterLayout from './core/components/MasterLayout';
+import NotFoundComponent from './core/components/NotFound';
+//nested route as per module
+import dashboardRoute from './dashboard/routes/route';
+import userRoute from './user/routes/route';
+console.log('ROUTE: master root react-routes v3.0.5 loaded');
 
-//using react-router v4
-const PrimaryLayout = () => (
-  <div className="primary-layout">
-    <header>
-      <HeaderComponent />
-    </header>
-    <div className="content-wrapper">
-      <div className="container-fluid">
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item">
-            <a href="/">Dashboard</a>
-          </li>
-          <li className="breadcrumb-item active">Tables</li>
-        </ol>
-        <main>
-          <Route path="/" exact component={DashboardComponent} />
-          <Route path="/users" component={UserListContainer} />
-          <Route path="/not" component={NotFound} />
-        </main>
-        <FooterComponent />
-      </div>
-    </div>
-  </div>
-)
+class Routes extends Component {
+  render() {
+    return (
+      <Router history={browserHistory}>
+        <Route path='/' component={MasterLayout}>
+          <IndexRedirect to='dashboard' />
+          {dashboardRoute()}
+          {userRoute()}
+          <Route path='*' component={NotFoundComponent} />
+        </Route>
+      </Router>
+    );
+  }
+}
 
-export default () => (
-  <BrowserRouter>
-    <PrimaryLayout />
-  </BrowserRouter>
-)
-
-
-// //core components
-// import MasterLayout from './core/components/MasterLayout';
-// import NotFound from './core/components/NotFound';
-// //routes for different modules
-// //import authRoute from './user/routes/route';                         {authRoute()}
-// //import dashboardRoute from './dashboard/routes/route';           {dashboardRoute()}
-// import userRoute from './user/routes/route';
-
-// //localhost:3000/admin
-// /* default path is localhost:3000/admin/users */
-// /* root of this route is /users i.e. localhost:3000/admin/users */
-// class Routes extends Component {
-  //   render() {
-    //     return (
-      //       <Router history={browserHistory}>
-      //         <Route path='/' component={MasterLayout}>
-      //           <IndexRedirect to='users' />
-      //           {userRoute()}
-      //           <Route path='*' component={NotFound} />
-      //         </Route>
-      //       </Router>
-      //     );
-      //   }
-      // }
-
-      // export default Routes;
+export default Routes;

@@ -1,16 +1,14 @@
-console.log('dashboard route loaded');
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 //child components under this route
-import DashboardComponent from '../components/dashboard';
-console.log('Dashboard route loaded');
+import DashBoardComponent from '../components/dashboard';
+console.log('ROUTE: Dashboard root');
 
-//localhost:3000/admin/users
-//localhost:3000/admin/users/:id
+//localhost:3000/dashboard
 export default function () {
     return (
         <Route path='dashboard'>
-            <IndexRoute component={DashboardComponent} />        
+            <IndexRoute component={DashBoardComponent} />
         </Route>
     );
 };

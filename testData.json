@@ -3,12 +3,12 @@
         "id": 1,
         "userName": "navidmostafiz",
         "firstName": "Navid",
-        "lastname": "Mostafiz"
+        "lastName": "Mostafiz"
     },
     {
         "id": 2,
         "userName": "mohaiminul",
         "firstName": "Mohaiminul",
-        "lastname": "Islam"
+        "lastName": "Islam"
     }
 ]
