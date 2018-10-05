@@ -22,6 +22,13 @@ REACT LIFE CYCLE
 * style-loader - Webpack loader that can load some CSS and inject it into the document via a <link> tag.
 * css-loader - is the loader that can parse a CSS file and apply various transforms to it. Crucially it has a CSS Modules mode that can take our CSS and hash the classes as mentioned above
 
+#### Setup Proxy in NPM
+
+```bash
+npm config set proxy http://proxy.domain.com:port_number
+npm config set https-proxy https://proxy.domain.com:port_number
+```
+
 ## :beetle: Steps To Install
 * 1) cmd> mkdir app_name
 * 2) cmd> npm init
